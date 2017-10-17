@@ -1,0 +1,30 @@
+/* .footer {
+	width: 25px;
+} */
+
+.body{
+	margin-top: 10px;
+	margin-bottom: 10px;
+} 
+
+.example-fill-remaining-space{
+	flex: 1 1 auto;
+}
+  
+.example-full-width {
+	margin-left: 250px;
+	width: 50%;
+}
+
+.link{
+	text-decoration: none;
+	color: rgba(255,255,255,.87);
+}
+
+.home{
+	margin-left: 20px;
+}
+
+.button{
+	margin-left: 20px;
+}
