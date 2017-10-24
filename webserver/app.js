@@ -4,7 +4,7 @@ const morgan = require('morgan');
 const mongoose = require('mongoose');
 const favoritesModel = require('./favorites/favorites.entity.js').favoritesEntity;
 
-mongoose.connect('mongodb://localhost/favorites');
+mongoose.connect('mongodb://mongodb/favorites');
 
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));

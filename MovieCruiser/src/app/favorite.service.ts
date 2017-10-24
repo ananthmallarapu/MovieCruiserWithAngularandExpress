@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class FavoriteService {
 
-  url = 'http://localhost:3000/watchlist';
+  url = '/watchlist';
 
   constructor(private http: Http) { }
 
