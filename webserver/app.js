@@ -4,7 +4,7 @@ const morgan = require('morgan');
 const mongoose = require('mongoose');
 const favoritesModel = require('./favorites/favorites.entity.js').favoritesEntity;
 
-mongoose.connect('mongodb://mongodb/favorites');
+mongoose.connect('mongodb://localhost/favorites');
 
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
@@ -67,6 +67,6 @@ function setupRestRoutes(app) {
   app = setupRestRoutes(app);
 
 
-  app.listen(3000,() =>{
-    console.log("server running on port 3000");
+  app.listen(8080,() =>{
+    console.log("server running on port 8080");
   });

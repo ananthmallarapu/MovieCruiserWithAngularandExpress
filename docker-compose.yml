@@ -2,17 +2,18 @@ version: "3.4"
 
 services:
   moviecruiser-server:
-    container_name: moviecruiser
+    container_name: moviecruiser_container
     build: .
     command: npm start
     depends_on:
       - mongodb
     ports:
-      - 3000:3000
-    links:
-      - mongodb
+      - 8080:8080
+    network_mode: host 
+    
   mongodb:
     container_name: mongodb_container
     image: mongo:latest
     ports:
-      - 27017:27017 
+      - 27017:27017
+    network_mode: host 

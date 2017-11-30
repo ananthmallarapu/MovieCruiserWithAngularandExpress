@@ -4,7 +4,7 @@
   "description": "1. After Cloning the the repository, browse to each of the folders MovieCruiser, webserverand run the command \"npm install\" from the terminal.",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon webserver/app.js",    
+    "start": "nodemon webserver/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,5 +20,10 @@
   "homepage": "https://github.com/sandeepreddy1996/MovieCruiserWithAngularandExpress#readme",
   "devDependencies": {
     "nodemon": "^1.12.1"
+  },
+  "dependencies": {
+    "express": "^4.16.2",
+    "mongoose": "^4.13.5",
+    "morgan": "^1.9.0"
   }
 }
