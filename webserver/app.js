@@ -3,7 +3,7 @@ const path = require('path');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
 const favoritesModel = require('./favorites/favorites.entity.js').favoritesEntity;
-
+const  fallback = require('express-history-api-fallback')
 mongoose.connect('mongodb://localhost/favorites');
 
 var db = mongoose.connection;
@@ -39,7 +39,7 @@ function setupMiddlewares(app) {
 function setupRestRoutes(app) {
 
     app.use('/', require(path.join(__dirname, './favorites')));
-
+    app.use(fallback(__dirname + '../MovieCruiser/dist'));
     app.use(function(req, res, next) {
         var err = new Error('Resource not found');
         err.status = 404;
@@ -47,6 +47,10 @@ function setupRestRoutes(app) {
         "error": err.message
         });
     });
+    app.all('*', (req , res) => {
+        logger.debug(`[TRACE] Server 404 request: ${req.originalUrl}`);
+        res.status(200).sendFile(path.join(__dirname , '../MovieCruiser/dist'));
+      });
 
     // app.use(function(err, req, res, next) {
     //     logger.error("Internal error in watch processor: ", err);
