@@ -9,7 +9,8 @@ services:
       - mongodb
     ports:
       - 8080:8080
-    network_mode: host 
+    network_mode: host
+    restart: always 
     
   mongodb:
     container_name: mongodb_container
@@ -17,3 +18,4 @@ services:
     ports:
       - 27017:27017
     network_mode: host 
+    restart: always
